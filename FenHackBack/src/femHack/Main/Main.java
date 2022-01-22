@@ -20,17 +20,17 @@ public class Main {
 			
 			Bullet myBullet;
 
-			boolean typeDate = Teclado.readJsonManual("How do you want to enter the data? write J for JSON  or M for Manual");
+			boolean typeDate = Teclado.readJsonManual("How do you want to enter the data? write J for JSON  or M for Manual: ");
 
 			if (typeDate) {
 				// you can page this json {'v0' : 50,'alpha' : 50,'save' :true,'typeData' :true } to try
 
-				myBullet = Teclado.readjson("please enter json ejemple:{'v0' : 50,'alpha' : 50,'save' :true,'typeData' :true }");
+				myBullet = Teclado.readjson("please enter json ejemple:{'v0' : 50,'alpha' : 50,'save' :true,'typeData' :true }: ");
 
 			} else {
-				int v0 = Teclado.readInt("please enter bullet speed");
-				int alpha = Teclado.readAngle("please enter the launch angle");
-				boolean save = Teclado.readyesNo("Do you want to save the results into a file (Y/N)");
+				int v0 = Teclado.readInt("please enter bullet speed: ");
+				int alpha = Teclado.readAngle("please enter the launch angle: ");
+				boolean save = Teclado.readyesNo("Do you want to save the results into a file (Y/N): ");
 
 				myBullet = new Bullet(v0, alpha, save, typeDate);
 			}
@@ -49,7 +49,7 @@ public class Main {
 				System.out.println("saved data");
 
 			}
-			continueasking = Teclado.readyesNo("Do you want to add another bullet (Y/N)");
+			continueasking = Teclado.readyesNo("Do you want to add another bullet (Y/N): ");
 		}
 
 		System.out.println("program finish");
