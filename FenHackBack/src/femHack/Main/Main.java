@@ -23,9 +23,9 @@ public class Main {
 			boolean typeDate = Teclado.readJsonManual("How do you want to enter the data? write J for JSON  or M for Manual: ");
 
 			if (typeDate) {
-				// you can page this json {'v0' : 50,'alpha' : 50,'save' :true,'typeData' :true } to try
+				// you can page this json {"v0": 50, "alpha": 50, "save": true, "typeData": true } to try
 
-				myBullet = Teclado.readjson("please enter json ejemple:{'v0' : 50,'alpha' : 50,'save' :true,'typeData' :true }: ");
+				myBullet = Teclado.readjson("please enter json example:{'v0' : 50,'alpha' : 50,'save' :true,'typeData' :true }: " );
 
 			} else {
 				int v0 = Teclado.readInt("please enter bullet speed: ");
@@ -38,9 +38,12 @@ public class Main {
 			// if you want save in file you need create this document in this route or
 			// change the route
 			if (myBullet.isSave()) { 
+				String json=myBullet.toJson();
 
-				toSave += "\n" + myBullet.toString();
-				String route = "c:/prova/femHack.txt";
+				toSave +=  json+"\n";
+				//String route = "c:/prova/femHack.txt";
+				String currentPath = System.getProperty("user.dir");
+				String route = currentPath + "/femHack.txt";
 
 				fw = new FileWriter(route);
 

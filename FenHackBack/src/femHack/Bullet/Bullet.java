@@ -1,5 +1,7 @@
 package femHack.Bullet;
 
+import com.google.gson.Gson;
+
 public class Bullet {
 
 	private static int count = 0; 
@@ -96,6 +98,10 @@ public class Bullet {
 	public String toString() {
 		return "Bullet [id=" + id + ", v0=" + v0 + ", alpha=" + alpha + ", save=" + save + ", typeData=" + typeData
 				+ ", h_max=" + h_max + ", x_max=" + x_max + "]";
+	}
+	public String toJson() {
+		String json = new Gson().toJson(this);
+		return json;
 	}
 	
 	public double calculateH_max() {
