@@ -17,7 +17,7 @@ public class Teclado {
      * @param message
      * @return String
      */
-    public static String readString(String message) {
+    public static String readString(String message) { 
         String chain = "";
         boolean right = false;
 
@@ -74,7 +74,7 @@ public class Teclado {
                 number = read.nextInt();
                 right = true;
             } catch (InputMismatchException ex) {
-                System.out.println("format error.");
+                System.out.println("Format error.");
             }
             read.nextLine();
         } while (!right);
@@ -95,9 +95,9 @@ public class Teclado {
             try {
                 number = read.nextInt();
                 if(number<=360 && number>=0) right = true;
-                else System.out.println("the number must be between 0 and 360" );
+                else System.out.println("The number must be between 0 and 360" );
             } catch (InputMismatchException ex) {
-                System.out.println("format error.");
+                System.out.println("Format error.");
             }
             read.nextLine();
         } while (!right);
